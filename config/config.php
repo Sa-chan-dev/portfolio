@@ -10,7 +10,7 @@
 // const DB_PASSWORD = 'admin';
 
 const DB_SGBD = 'mysql';
-const DB_SGBD_URL = 'sarah-delaunay.fr';
+const DB_SGBD_URL = 'localhost';
 const DB_DATABASE = 'mon_portefolio';
 const DB_CHARSET = 'utf8';
 const DB_USER = 'root';
