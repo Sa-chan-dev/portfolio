@@ -17,10 +17,8 @@
 }
 
 .about_flex{
-    display:flex; 
-    
+    display:flex;   
 }
-
 
 .about_img{
     object-fit: cover;

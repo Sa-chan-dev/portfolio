@@ -113,12 +113,14 @@
 
     .form_contact div{
         padding: 2px;
+        
     }
 
     .form_contact div div label{
         padding: 2px;
     
     }
+
     .form_contact{
         padding: 25px;}
 }
