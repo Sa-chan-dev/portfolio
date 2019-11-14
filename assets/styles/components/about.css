@@ -23,8 +23,8 @@
 
 .about_img{
     object-fit: cover;
-    width: 500px;
-    margin-left: 100px;  
+    height: 600px;
+    margin-left: 100px; 
 }
 
 .about_text{
