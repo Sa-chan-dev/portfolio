@@ -12,6 +12,7 @@ html, body,video {
 }
 
 html{
+    margin: 0;
     overflow-x:hidden;
 }
 
