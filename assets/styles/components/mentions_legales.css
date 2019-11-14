@@ -1,0 +1,15 @@
+.content_mentions_legales{
+    height: 100%;
+    background-color: var(--main-color--light);
+}
+
+.mentions_legales_title{
+    text-align: center;
+    padding: 150px 0;
+}
+
+.content_legale{
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 150px;
+}

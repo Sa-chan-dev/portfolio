@@ -1,0 +1,28 @@
+.banner_container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin : 0 auto ;
+}
+.item_container{
+    
+    width: 200px;
+    height: 200px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.icon{
+    width: 125px;
+    height: 125px;    
+    object-fit: contain; 
+    opacity: 0.6;
+}
+
+.item_container:hover .icon{
+    filter: contrast(50%);
+}

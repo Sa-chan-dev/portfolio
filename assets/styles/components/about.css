@@ -1,0 +1,60 @@
+.about_container{
+    height: 100%;
+    background-color: var(--main-color--light);
+    margin:0;
+    padding: 250px 0 150px 0;
+    
+}
+
+/* Masque de texture en haut du container */
+.about_up{
+    position: absolute;
+    top: -460px;
+}
+
+.about_title{
+    margin:0;
+}
+
+.about_flex{
+    display:flex; 
+    
+}
+
+.about_img{
+    object-fit: cover;
+    width: 500px;
+    margin-left: 100px;  
+}
+
+.about_text{
+    padding: 100px 0;
+}
+
+/* Tablettes et mobiles */
+
+@media (max-width: 1250px){
+    .about_container{ 
+        margin:0 auto;
+        padding: 150px 0;
+    }
+}
+
+
+@media (max-width: 900px){
+
+
+    .about_flex{
+    
+        flex-direction: column;
+        
+    }
+
+    .about_img{
+        
+        width: 250px;
+        margin: 0 auto;
+    
+    }
+
+}

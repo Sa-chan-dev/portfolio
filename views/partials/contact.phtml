@@ -1,0 +1,51 @@
+<section id="contact" class="contact_container">
+    <h2 class="h2 contact_title">Contactez-moi ?! </h2>
+    <!-- formulaire de contact renvoyant à envoi_formulaire.php -->
+    <form class="form_contact" method="POST" action="envoi_formulaire.php" enctype="multipart/form-data">
+        <div id="redirection_form" class="bloc_form">
+            <div>
+                <label for="lastName">Nom : </label>
+                <input type="text" id="lastName" name="nom" required> 
+            </div>
+            <div>
+                <label for="name">Prénom : </label>
+                <input type="text" id="name" name="prenom" required> 
+            </div>
+        </div>
+        <div class="bloc_form">
+            <div>
+                <label for="mail">E-mail : </label>
+                <input type="email" id="mail" name="email" required> 
+            </div>
+            <div>
+                <label for="phone">Téléphone : </label>
+                <input type="tel" id="phone" name="telephone" pattern="[0-9]{10}"> 
+            </div>
+        </div>
+        <div class="bloc_form">
+            <textarea id="msg" name="message" rows="10" cols="83" placeholder="Entrez votre message ici..." required></textarea>
+        </div>
+        <div class="form_button bloc_form">
+            <button type="submit" name="envoi" value="envoyer">Envoyer le message</button>
+        </div>
+
+        <!-- message flash -->
+        <div class="alert-success">
+                
+                <?php
+                        if (isset($_SESSION['SuccesFlash'])) {
+                            echo $_SESSION['SuccesFlash'];
+                            echo '<div class="close">X</div>';
+                            unset($_SESSION['SuccesFlash']);
+                        }
+                ?>
+        </div>
+    </form>
+    <!-- images de fond -->
+    <div class="container_img_texture">
+        <img class="image2_xp" src="assets/images/pissenlit2.svg" alt="pissenlit">
+        <img class="image_xp" src="assets/images/pissenlit.svg" alt="pissenlit">
+    </div>   
+
+</section>
+

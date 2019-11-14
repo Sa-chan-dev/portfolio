@@ -1,0 +1,124 @@
+.contact_container{
+    height: 100%;
+    background-color: var(--main-color--light);
+    padding : 20px 0 ;
+}
+
+.contact_title{
+    text-align: center;
+    margin :0;
+    
+}
+
+/* formulaire de contact */
+.form_contact{
+    position: relative;
+    padding: 50px;
+    margin :100px auto; 
+    background-color: var(--main-color--lightTransPlus);
+    width: 900px;
+    border-radius: 30px;
+    -webkit-box-shadow: 0px 0px 18px -4px rgba(0,0,0,0.67);
+    -moz-box-shadow: 0px 0px 18px -4px rgba(0,0,0,0.67);
+    box-shadow: 0px 0px 18px -4px rgba(0,0,0,0.67);
+    z-index: 10;
+}
+
+.form_contact .bloc_form{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.form_contact div div label{
+    padding: 10px;
+}
+
+.form_button{
+    display: flex;
+    justify-content: center;    
+}
+
+.form_button button{
+    padding:10px 20px;
+    border-radius: 30px;
+    background-color: var(--quat-color);
+    font-weight: bold;
+    color:white;
+}
+
+/* Image de fond */
+.image_xp{
+    position: absolute;
+    top:-1105px;
+    left:50px;
+    z-index: 0;
+    margin: 0;
+    
+}
+.image2_xp{
+    position: absolute;
+    top:-1570px;
+    left:52%;
+}
+
+/* Message Flash */
+
+.alert-success{
+    text-align: center;
+    color:rgb(2, 190, 2);
+    font-weight: bold;
+}
+
+.alert-success .close{
+    cursor:pointer;
+    margin:-34px 0px 16px 700px 
+}
+
+.hide-alert{
+    display: none;
+}
+/* Tablette et mobiles */
+
+@media (max-width: 934px){
+
+    .form_contact{
+        width: 80%;
+    }
+
+    .form_contact div{
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form_contact div div label{
+        padding: 5px;
+    
+    }
+
+    form_button button{
+        margin :20px;
+    
+    }
+
+    textarea{
+        margin : 20px 0px ;
+    }
+
+}
+
+@media (max-width: 460px){
+
+    .form_contact div{
+        padding: 2px;
+    }
+
+    .form_contact div div label{
+        padding: 2px;
+    
+    }
+    .form_contact{
+        padding: 25px;}
+}

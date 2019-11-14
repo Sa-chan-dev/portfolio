@@ -1,0 +1,19 @@
+/* import des styles globaux */
+@import "common/global.css";
+@import "common/variables.css";
+
+/* import des styles des composants */
+@import "components/header.css";
+@import "components/hero.css";
+@import "components/about.css";
+@import "components/skills.css";
+@import "components/card_deck.css";
+@import "components/banner_icon.css";
+@import "components/experiences.css";
+@import "components/projects.css";
+@import "components/cv.css";
+@import "components/contact.css";
+@import "components/footer.css";
+
+@import "components/mentions_legales.css";
+

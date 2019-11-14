@@ -1,0 +1,195 @@
+/*DESKTOP */
+.nav_container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondary-color);
+    height: 60px;
+    padding : 30px 0;
+    position : fixed;
+    z-index: 15;
+    top:0;
+    width: 100%;
+    -webkit-box-shadow: 0px 0px 23px -2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 23px -2px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 23px -2px rgba(0,0,0,0.4);
+}
+
+.logo_container{
+    display: flex;
+    flex-direction: row;
+}
+
+.logo_container .burger_title{
+    text-decoration: none;
+    margin : 0 10px 0 50px;
+    color : var(--c-primary);
+    font-family : var(--secondary-font);
+    font-size: var(--xxl-size);
+}
+
+
+/* Menu toggle BURGER */
+.menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu > li {
+    margin: 0 16px;
+    
+}
+
+.nav_container .nav_link{
+    color : var(--c-primary);
+    font-family : var(--primary-font);
+    font-weight : bold;
+    font-size : var(--m-plus-size);
+    margin :0px 10px;
+    text-decoration: none;
+} 
+
+.nav_container .nav_link:hover{
+    color : var(--secondary-color--dark);
+}
+
+.menu-button-container {
+    display: none;
+    height: 100%;
+    width: 80px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* bouton 3 traits se transforme en croix */
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+    display: block;
+    background-color: var(--c-primary);
+    position: absolute;
+    height: 4px;
+    width: 30px;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+}
+
+.menu-button::before {
+    content: '';
+    margin-top: -8px;
+}
+
+.menu-button::after {
+    content: '';
+    margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+    margin-top: 0px;
+    transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+    background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+    margin-top: 0px;
+    transform: rotate(-405deg);
+}
+
+/*TABLETTE et MOBILE */
+
+
+@media (max-width: 1250px){
+
+    .logo_container .burger_title{
+        margin : 10px 35px 0 ;
+        font-size: var(--xxl-size);
+        line-height: 70%;
+        
+    }
+
+}
+
+@media (max-width: 1052px) {
+    .menu-button-container {
+    display: flex;
+    }
+    .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 60px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display:none;
+
+    }
+
+    .logo_container .burger_title{
+        margin : 0 10px 0 10px;
+        font-size: var(--xxl-size);
+    }
+    
+
+    #menu-toggle ~ .menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        background-color: var(--main-color--light);
+    }
+    #menu-toggle:checked ~ .menu li {
+        border: 1px solid ;
+        height: 40px;
+        padding: 8px;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+        
+    }
+    
+    /* lorsque le menu est ouvert */
+    #menu-toggle:checked ~ .menu{
+        display:block;
+    }
+
+    .menu > li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 8px 0;
+        width: 100%;
+        color :var(--main-color--light);
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.22);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.22);
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.22);
+        background-color:var(--c-secondary);
+    }
+    
+}
+
+
+
+
+@media (max-width: 500px){
+
+    .logo_container .burger_title{
+        margin : 0 10px 0 10px;
+        font-size: var(--xl-size);
+
+    }
+
+}

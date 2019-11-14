@@ -1,0 +1,97 @@
+.cards {
+    list-style: none;
+    display:flex;
+    justify-items:center;
+    flex-wrap: wrap; 
+    padding : 0px;
+}
+
+.card-container {
+    cursor: pointer;
+    height: 320px;
+    width: 220px;
+    perspective: 600px;
+    position: relative;
+    margin: 20px;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(to bottom,#fff,#ddd);
+    box-shadow:0 0 5px rgb(153, 153, 153);
+    border-radius:5px;
+    position: absolute;
+    /* flip */
+    transform-style: preserve-3d;
+    transition: all 0.4s ease-in-out;
+}
+
+.card:hover, .active {
+    transform: rotateY(180deg);
+}
+
+.img_border{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:var(--main-color--light);
+    border-radius:120px;
+    width: 130px;
+    height: 130px;  
+}
+
+.cards img{
+    width: 80px;
+    height: 80px;
+}
+
+.card .side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-image: url("../../../assets/images/fond_carte/zigzag-937583_1280.jpg");
+    background-position :center;
+    background-size: cover;
+    border: solid 10px var(--main-color--light); 
+    border-radius:5px;
+    backface-visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+}
+
+.card .back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(to bottom,#fff,rgb(235, 233, 233));
+    text-align: center;
+    /* flip */
+    transform: rotateY(180deg);
+}
+
+.level{
+    text-align: center;
+    padding-top: 20px;
+    font-size:var(--m-plus-size) ;
+    font-weight: bold;
+}
+
+.other{
+    text-align: center;
+    padding: 10px 5px;
+}
+
+
+/* Tablette et mobile */
+
+@media (max-width: 900px){
+
+    .card-container {
+        margin: 20px auto;
+    }
+
+}

@@ -1,0 +1,146 @@
+.projects_container{
+    height: 100%;
+    background-color: var(--main-color--lightTrans);
+    padding :50px 0 ;
+    
+}
+
+.projet_up{
+    
+    position: absolute;
+    top:-360px;
+    filter: saturate(97%) brightness(99%) hue-rotate(361deg);
+}
+
+.projet_down{
+    position: absolute;
+    top:-11px;
+    filter: saturate(97%) brightness(100%) hue-rotate(361deg);
+}
+
+.projets_title{
+
+    text-align: center;
+    margin :0; 
+    color:white;
+}
+
+.project_list{
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 100px auto;
+    
+}
+
+.project{
+    display: flex;
+    width: 300px;
+    height: 300px;
+    background-color: var(--quat-color--trans);
+    padding: 10px;
+    margin : 20px;
+}
+
+.project_url{
+    width: 100%;
+    height: 100%;
+    text-decoration:none;
+}
+
+.project_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hover-side{
+    display:none;
+}
+
+.project:hover .hover-side{
+    display: flex;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.hover-side p{
+    color:white;
+}
+
+.project:hover .face-side{
+    display: none;
+    
+}
+
+
+/* TABLETTES ET MOBILES */
+
+@media (max-width: 800px) {
+
+    .project_list{
+        margin:100px 0px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .projet_up{
+    
+        filter: saturate(100%) brightness(101%) hue-rotate(361deg);
+    }
+}
+
+
+@media (max-width: 630px) {
+    .projet_up{
+    
+        filter: saturate(100%) brightness(100%) hue-rotate(361deg);
+    }
+    
+    .projet_down{
+        top: -29px;
+        filter: saturate(97%) brightness(100%) hue-rotate(361deg);
+    }
+}
+
+@media (max-width: 530px) {
+    .projet_up{
+    
+        filter: saturate(100%) brightness(98%) hue-rotate(361deg);
+    }
+    
+    .projet_down{
+        top: -29px;
+        filter: saturate(105%) brightness(94.5%) hue-rotate(359deg);
+    }
+}
+
+@media (max-width: 330px) {
+
+    .project_list{
+        margin:80px 0px;
+        flex-direction: column;
+
+    }
+
+    .project{
+        width: 250px;
+        height: 250px;
+    }
+
+    .project:hover .hover-side{
+        padding: 0px
+    }
+
+    .projet_up{
+    
+        filter: saturate(108%) brightness(94%) hue-rotate(359deg);
+    }
+    
+    .projet_down{
+        top: -29px;
+        filter: saturate(108%) brightness(94.5%) hue-rotate(359deg);
+    }
+    
+}

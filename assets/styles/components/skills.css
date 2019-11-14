@@ -1,0 +1,38 @@
+.skills_container{
+    height: 100%;
+    background-color: var(--main-color--light);
+    padding :  50px 0 250px;
+}
+
+.skills_title{
+    text-align: center;
+    margin :0; 
+    padding-top:200px;
+}
+
+.skills_sub_title{
+    text-align: center;
+    margin: 100px 0 ;
+}
+
+.tache_rose{
+    display: block;
+    position: absolute;
+    left:-20px;
+}
+
+.tache_jaune {
+    position: absolute;
+    top: -360px;
+    left: 78%;
+
+}
+
+/* tablettes et mobiles */
+@media (max-width: 900px){
+
+    .tache_rose{
+        display: none;
+        
+    }
+}

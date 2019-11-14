@@ -1,0 +1,34 @@
+/* Initialisation des differentes variables */
+:root{
+
+    /* background color  */
+    --main-color: rgb(71, 72, 85);
+    --main-color--light:rgb(255, 255, 255);
+    --main-color--lightTransPlus:rgba(255, 255, 255, 0.65);
+    --main-color--lightTrans:rgba(255, 255, 255, 0.3);
+    --secondary-color : #fbb0997c;
+    --secondary-color--dark :  rgb(119, 43, 206);
+    --ter-color-trans :   rgb(224, 0, 138);
+    --ter-color :  rgb(255, 0, 157);
+    --quat-color : rgba(100, 22, 94);
+    --quat-color--trans : rgba(100, 22, 93, 0.486);
+
+
+    /* font color */
+    --c-primary :  rgb(71, 72, 85);
+    --c-secondary :#F5F1F3;
+
+    /* font style */
+    --primary-font : 'Lato', sans-serif;
+    --secondary-font :'Zeyada', cursive;
+    /* font-size:  */
+    --m-size: 14px;
+    --m-plus-size: 18px;
+    --l-size:22px;
+    --xl-size:32px;
+    --xxl-size:42px;
+
+
+
+
+}

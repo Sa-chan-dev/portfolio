@@ -1,0 +1,85 @@
+/* Regroupement des styles globaux */
+
+html, body,video {
+    margin: 0;
+    /* background-image: url('../../../assets/images/pattern_min.jpg'); */
+    background-image: linear-gradient(to bottom,rgb(255, 180, 131) , rgb(224, 0, 138));
+    /* background-repeat:  repeat-y; */
+    background-size:100%;
+    /* background-attachment: fixed ; */
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: var(--primary-font);
+    box-sizing: border-box;
+    color: var(--main-color);
+}
+
+.text{
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.container{
+    max-width: 1350px;
+    margin: 0 auto;
+    width: 90%;
+    
+
+}
+
+.container_shadow{
+    -webkit-box-shadow: 0px 0px 23px -2px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 0px 23px -2px rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 23px -2px rgba(0,0,0,0.4);
+}
+
+.content{
+    z-index: 5;
+}
+
+
+.h1{
+    font-family: var(--secondary-font);
+    font-size : 80px;
+    color : var(--c-primary);
+    font-weight: 400;
+}
+
+.h2{
+    font-family: var(--ter-font);
+    font-size : 50px;
+    color : var(--c-primary);
+    font-weight: 400;
+
+}
+
+.h3{
+    font-family: var(--primary-font);
+    font-size : 30px;
+    color : var(--c-primary);
+    font-weight: 400;
+
+}
+
+.important_word{
+    color : var(--secondary-color--dark);
+    font-weight: 500;
+}
+
+/* pour le masque peinture entre chaque section */
+.container_img_texture{
+    position: relative;
+    width: 100%;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 1052px) {
+
+    .h1{
+        font-size : 40px;
+    }
+
+}
