@@ -4,7 +4,7 @@ $(function() {
     $( document ).ready(function() {
 
         //au clic l'objet reste en hover
-        $('.card-container').on('click', function() {
+        $('.card').on('click', function() {
             $(this).toggleClass("active");
         });
 
