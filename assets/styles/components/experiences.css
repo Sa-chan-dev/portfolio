@@ -15,6 +15,7 @@
 .expe_up{
     position: absolute;
     transform:rotate(180deg);
+    -webkit-transform : rotateY(180deg);
     top:-340px;
 }
 
@@ -57,6 +58,7 @@
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
+    -webkit-transform : translateX(-50%);
     width:20px;
     height: 20px;
     border-radius: 50%;
@@ -191,6 +193,8 @@
 
 .item_xp::after {
     transition: background .5s ease-in-out;
+    -webkit-transition : background .5s ease-in-out;
+
 }
 
 .item_xp.show::after {
@@ -204,14 +208,17 @@
     visibility: hidden;
     opacity: 0;
     transition: all .5s ease-in-out;
+    -webkit-transition : all .5s ease-in-out;
 }
 
 .item_xp:nth-child(odd) .item_xp_bloc {
     transform: translate3d(200px, 0, 0);
+    -webkit-transform : translate3d(200px, 0, 0);
 }
 
 .item_xp:nth-child(even) .item_xp_bloc {
     transform: translate3d(-200px, 0, 0);
+    -webkit-transform : translate3d(-200px, 0, 0);
 }
 
 .item_xp.show .item_xp_bloc {
