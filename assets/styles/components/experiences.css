@@ -15,7 +15,6 @@
 .expe_up{
     position: absolute;
     transform:rotate(180deg);
-    -webkit-transform : rotateY(180deg);
     top:-340px;
 }
 
