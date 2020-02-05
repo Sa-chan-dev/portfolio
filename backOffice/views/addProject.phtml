@@ -1,0 +1,46 @@
+<section class="bo_form">
+    <h1 class="h1 bo_title1">
+        <?php if(is_null($id)):?>Ajouter une réalisation<?php 
+                else:?>Modifier une réalisation<?php endif;?>
+    </h1>
+
+    <form action="<?php if(is_null($id)):?>addProject.php<?php 
+                    else:?>editProject.php<?php 
+                    endif;?>" 
+                    method="POST" enctype="multipart/form-data">
+
+            <?php if(!is_null($id)):?>
+                <input type="hidden" value="<?=$id?>" name="id">
+            <?php endif;?>
+
+            <div class="bo_form_item">
+                <label for="titreForm">Titre</label>
+                <input type="text" class="bo_form_input" id="titreForm" aria-describedby="titreForm" name="titreForm"value="<?=$titre?>" required>
+            </div>
+
+            <div class="bo_form_item">
+                <label for="descriptionForm">Description</label>
+                <input type="text" class="bo_form_input" id="descriptionForm" aria-describedby="descriptionForm" name="descriptionForm" value="<?=$description?>" required>
+            </div>
+
+            <div class="bo_form_item">
+                <label for="anneeFinForm">Langage</label>
+                <input type="text" class="bo_form_input" id="langageForm" aria-describedby="langageForm" name="langageForm"  value="<?=$langage?>" required>
+            </div>
+
+            <div class="bo_form_item">
+                <label for="urlForm">Url</label>
+                <input type="text" class="bo_form_input" id="urlForm" name="urlForm"  value="<?=$url?>">
+                <p><strong>Note:</strong> Si l'url reste vide le href se fera sur réalisation </p>
+            </div>
+
+            <input class="bo_form_item" type="file" id="imageForm" name="imageForm" accept=".svg,.png, .jpg,  .jpeg ">
+            <p><strong>Note:</strong> Seuls les formats  .jpg, .jpeg .png sont autorisés </p>
+
+                <button type="submit" class="bo_form_button">
+                    <?php if(is_null($id)):?>Ajouter<?php 
+                    else:?>Modifier<?php endif;?>
+                </button>
+        </fieldset>
+    </form>
+</section>

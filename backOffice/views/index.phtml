@@ -1,0 +1,47 @@
+<section class="bo_accueil ">
+    <h1 class="bo_title1 h1">Bienvenue sur le Back Office !</h1>
+    <div class="alert-success">
+                
+        <?php
+                if (isset($_SESSION['SuccesFlash'])) {
+                    echo $_SESSION['SuccesFlash'];
+                    echo '<div class="close">X</div>';
+                    unset($_SESSION['SuccesFlash']);
+                }
+        ?>
+    </div>
+    <p class="bo_accueil_description">Dans cette section vous pouvez ajouter, éditer ou supprimer le contenu du site</p>
+    <h2 class="bo_title2">Que souhaitez-vous faire ? </h2>
+    <div class="bo_accueil_choice_container">
+        <div class="bo_accueil_choice">
+                <h3 class="bo_title3">Messagerie</h3>
+                <a href="readMessage.php">Lire et gérer mes messages</a>
+            </div>
+        <div class="bo_accueil_choice">
+            <h3 class="bo_title3" >Utilisateurs</h3>
+            <a href="users.php">Gérer les utilisateurs</a>
+        </div>
+        <div class="bo_accueil_choice">
+            <h3 class="bo_title3">A propos</h3>
+            <a href="editApropos.php">Modifier la description</a>
+        </div>
+        <div class="bo_accueil_choice">
+            <h3 class="bo_title3">Expériences</h3>
+            <a href="experiences.php">Gérer mes experiences</a>
+        </div>
+        <div class="bo_accueil_choice">
+            <h3 class="bo_title3">Compétences</h3>
+            <a href="skills.php">Gerer mes compétences</a>
+            <a href="qualite.php">Gerer mes qualités</a>
+        </div>
+        <div class="bo_accueil_choice">
+            <h3 class="bo_title3">Projets</h3>
+            <a href="projects.php">Gerer mes réalisations</a>
+        </div>
+        <div class="bo_accueil_choice">
+            <h3 class="bo_title3">CV</h3>
+            <a href="addCv.php">Ajouter un nouveau cv</a>
+        </div>
+    </div>
+
+</section>

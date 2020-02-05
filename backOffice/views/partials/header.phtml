@@ -1,0 +1,21 @@
+<header class="header_container">
+    
+    <nav role="navigation" class="nav_container">
+        <div class="logo_container">
+            <a href="index.php" class="burger_title">Back Office</a>
+        </div> 
+        <div>
+            <input id="menu-toggle" type="checkbox" />
+            <label class="menu-button-container" for="menu-toggle">
+                <div class="menu-button"></div>
+            </label>
+        <?php if(isset($_SESSION['connected'])):?>
+            <ul class="menu">
+                <li><a class="nav_link" href="index.php">Accueil</a></li>
+                <li><a class="nav_link" href="logout.php">Déconnexion</a></li>
+            </ul>
+        <?php endif;?>
+        </div>
+    </nav>
+
+</header>

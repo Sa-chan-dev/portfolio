@@ -1,0 +1,38 @@
+<section class="read_message">
+    <h1 class="h1 bo_title1">Gestion des qualités</h1>
+    <!-- message flash -->
+    <div class="alert-success">
+                
+        <?php
+                if (isset($_SESSION['SuccesFlash'])) {
+                    echo $_SESSION['SuccesFlash'];
+                    echo '<div class="close">X</div>';
+                    unset($_SESSION['SuccesFlash']);
+                }
+        ?>
+    </div>
+    <div>
+        <a href="addQualite.php"><i class="fas fa-plus-circle"></i>Ajouter une qualité</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" >Supprimer</th>
+                <th scope="col" >Modifier</th>
+                <th scope="col">titre</th>
+                <th scope="col">icone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($qualites as $qualite):?>
+                <tr>
+                        <td><a href="delQualite.php?id=<?=$qualite['id']?>" data-toggle="modal" data-target="#delete"><i class="fas fa-trash-alt"></i></a></td>
+                        <td><a href="editQualite.php?id=<?=$qualite['id']?>" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></a></td>
+                        <td><?=$qualite['titre']?></td>
+                        <td><img class="readImgBo" src="<?='../assets/images/uploads/qualites/'.$qualite['icone']?>" alt="<?=$qualite['titre']?>"></td>
+                </tr> 
+            <?php endforeach;?>
+        </tbody>
+    </table>
+
+</section>

@@ -1,6 +1,13 @@
 <section id="cv" class="cv_container">
     <h2 class="h2 cv_title">Mon profil vous intéresse ? </h2>
     <div class="button_container">
-        <a class="cv_button" href="assets/images/cv_dev_junior_2019.pdf" download="CV_DELAUNAY_sarah">Télécharger mon CV</a>
+        <a class="cv_button" href= 
+        <?php 
+            $table='cv';
+            $result= loadTable($table);
+            echo 'assets/images/uploads/cv/'.$result[0]['lien_cv'];
+        ?>
+        
+        download="CV_DELAUNAY_sarah">Télécharger mon CV</a>
     </div>
 </section>

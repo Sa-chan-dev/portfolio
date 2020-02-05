@@ -1,0 +1,42 @@
+<section class="read_message">
+    <h1 class="h1 bo_title1">Gestion des compétences</h1>
+    <!-- message flash -->
+    <div class="alert-success">
+                
+        <?php
+                if (isset($_SESSION['SuccesFlash'])) {
+                    echo $_SESSION['SuccesFlash'];
+                    echo '<div class="close">X</div>';
+                    unset($_SESSION['SuccesFlash']);
+                }
+        ?>
+    </div>
+    <div>
+        <a href="addSkill.php"><i class="fas fa-plus-circle"></i>Ajouter une compétence</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" >Supprimer</th>
+                <th scope="col" >Modifier</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Icone</th>
+                <th scope="col">Niveau</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($competences as $competence):?>
+                <tr>
+                        <td><a href="delSkill.php?id=<?=$competence['id']?>" data-toggle="modal" data-target="#delete"><i class="fas fa-trash-alt"></i></a></td>
+                        <td><a href="editSkill.php?id=<?=$competence['id']?>" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></a></td>
+                        <td><?=$competence['titre']?></td>
+                        <td><img class="readImgBo" src="<?='../assets/images/uploads/competences/'.$competence['icone']?>" alt="<?=$competence['titre']?>"></td>
+                        <td><?=$competence['niveau']?></td>
+                        <td>[...] <?=substr($competence['description'], 80 )?></td>
+                </tr> 
+            <?php endforeach;?>
+        </tbody>
+    </table>
+
+</section>

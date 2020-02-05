@@ -1,0 +1,58 @@
+.bo_form{
+    background-color: var(--c-secondary);
+    padding: 0 0 100px;
+    min-height: 900px;
+    height: 100%;
+    margin: -100px auto;
+    width: 100%;
+}
+
+.bo_form form{
+    margin: 0 auto;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.bo_form_item{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.bo_form_input, .bo_form_item label{
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.bo_form_button{
+    background-color: var(--quat-color);
+    color : black;
+    padding: 15px;
+    border-radius:20px;
+}
+
+
+.readImgBo{
+    width: 100px;
+}
+
+
+@media (max-width: 600px){
+
+
+
+    .bo_form form{
+        margin: 0 auto;
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+}
+

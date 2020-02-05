@@ -1,0 +1,14 @@
+<section class="bo_form">
+    <h1 class="h1 bo_title1"> Modifier votre description</h1>
+
+    <form action="editApropos.php" method="POST" enctype="multipart/form-data" >
+
+        <input type="hidden" value="<?=$id?>" name="id">
+        <div class="bo_form_item">
+            <textarea  id ="tinyMce" rows="15" cols="80" class="bo_form_input" name="descriptionForm" ><?=$description?></textarea>
+        </div>
+
+        <button type="submit" class="bo_form_button">Modifier</button>
+    </form>
+
+</section>

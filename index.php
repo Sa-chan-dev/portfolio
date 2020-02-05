@@ -6,5 +6,6 @@ session_start();
 $title = 'Accueil';  
 
 include('config/config.php');
-include('views/layout.phtml');
 include('lib/bdd.lib.php');
+include('lib/function.php');
+include('views/layout.phtml');

@@ -2,11 +2,11 @@
 
 session_start();
 include('config/config.php');
-include('functions.php');
 include('lib/bdd.lib.php');
 
 
 $errorForm = []; //Pas d'erreur pour le moment sur les données
+$id = '';
 $nom = '';
 $prenom = '';
 $mail = '';

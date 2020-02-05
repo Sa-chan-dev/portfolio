@@ -1,0 +1,41 @@
+<section class="read_message">
+    <h1 class="h1 bo_title1">Gestion des réalisations</h1>
+    <!-- message flash -->
+    <div class="alert-success">
+                
+        <?php
+                if (isset($_SESSION['SuccesFlash'])) {
+                    echo $_SESSION['SuccesFlash'];
+                    echo '<div class="close">X</div>';
+                    unset($_SESSION['SuccesFlash']);
+                }
+        ?>
+    </div>
+    <div>
+        <a href="addProject.php"><i class="fas fa-plus-circle"></i>Ajouter une réalisations</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" >Supprimer</th>
+                <th scope="col" >Modifier</th>
+                <th scope="col">titre</th>
+                <th scope="col">langage</th>
+                <th scope="col">url du projet</th>
+                <th scope="col">image de présentation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($realisations as $realisation):?>
+                <tr>
+                        <td><a href="delProject.php?id=<?=$realisation['id']?>" data-toggle="modal" data-target="#delete"><i class="fas fa-trash-alt"></i></a></td>
+                        <td><a href="editProject.php?id=<?=$realisation['id']?>" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></a></td>
+                        <td><?=$realisation['titre']?></td>
+                        <td><?=$realisation['language']?></td>
+                        <td><?=$realisation['url']?></td>
+                        <td><img class="readImgBo" src="<?='../assets/images/uploads/projets/'.$realisation['image']?>" alt="<?=$realisation['titre']?>"></td>
+                </tr> 
+            <?php endforeach;?>
+        </tbody>
+    </table>
+</section>

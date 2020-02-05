@@ -1,0 +1,39 @@
+<section class="read_message">
+    <h1 class="h1 bo_title1">Messagerie</h1>
+    <!-- message flash -->
+    <div class="alert-success">
+                
+        <?php
+                if (isset($_SESSION['SuccesFlash'])) {
+                    echo $_SESSION['SuccesFlash'];
+                    echo '<div class="close">X</div>';
+                    unset($_SESSION['SuccesFlash']);
+                }
+        ?>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" >Supprimer</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col" >Email</th>
+                <th scope="col" >Téléphone</th>
+                <th scope="col" >Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($messages as $message):?>
+                <tr>
+                        <td><a href="delMessage.php?id=<?=$message['id']?>" data-toggle="modal" data-target="#delete"><i class="fas fa-trash"></i></a></td>
+                        <td><?=$message['nom']?></td>
+                        <td><?=$message['prenom']?></td>
+                        <td><?=$message['email']?></td>
+                        <td><?=$message['telephone']?></td>
+                    <td><?=$message['message']?></td>
+                </tr> 
+            <?php endforeach;?>
+        </tbody>
+    </table>
+
+</section>

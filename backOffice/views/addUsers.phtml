@@ -1,0 +1,52 @@
+<section class="bo_form">
+    <h1 class="h1 bo_title1">
+        <?php if(is_null($id)):?>Ajouter un utilisateur<?php 
+                else:?>Modifier un utilisateur<?php endif;?>
+    </h1>
+
+    <form action="<?php if(is_null($id)):?>addUser.php<?php 
+                    else:?>editUser.php<?php 
+                    endif;?>" 
+                    method="POST" enctype="multipart/form-data">
+
+            <?php if(!is_null($id)):?>
+                <input type="hidden" value="<?=$id?>" name="id">
+            <?php endif;?>
+
+            <div class="bo_form_item">
+                <label for="nomForm">Nom</label>
+                <input type="text" class="bo_form_input" id="nomForm" aria-describedby="nom" name="nomForm" placeholder="Votre nom" value="<?=$nom?>">
+            </div>
+
+            <div class="bo_form_item">
+                <label for="prenomForm">Prénom</label>
+                <input type="text" class="bo_form_input" id="prenomForm" aria-describedby="prenom" name="prenomForm" placeholder="Votre prénom" value="<?=$prenom?>">
+            </div>
+
+            <div class="bo_form_item">
+                <label for="emailForm">E-mail</label>
+                <input type="text" class="bo_form_input" id="emailForm" aria-describedby="email" name="emailForm" placeholder="Votre e-mail" value="<?=$email?>">
+            </div>
+
+            <div class="bo_form_item">
+                <label for="passwordForm">Mot de passe <span>(Le mot de passe doit comporter 8 charactères minimum.)</span></label>
+                <input type="password" class="bo_form_input" id="passwordForm" name="passwordForm" placeholder="mot de passe" >
+                
+            </div>
+            <?php if(!is_null($id)):?><small>Ne rien modifier si vous ne voulez pas changer de mot de passe</small><?php endif;?>
+
+            <div class="bo_form_item">
+                <label for="roleForm">Rôle</label>
+                <select class="bo_form_input" id="roleForm" name="roleForm" value="<?=$role?>">
+                    <option  value="ROLE_VISIT">Visiteur</option>
+                    <option  value="ROLE_ADMIN">Administrateur</option>
+                </select>
+            </div>
+                <button type="submit" class="bo_form_button">
+                    <?php if(is_null($id)):?>Ajouter<?php 
+                    else:?>Modifier<?php endif;?>
+                </button>
+        </fieldset>
+    </form>
+
+</section>

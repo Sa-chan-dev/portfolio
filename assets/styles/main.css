@@ -17,3 +17,10 @@
 
 @import "components/mentions_legales.css";
 
+/* Back office */
+
+@import "components/bo_layout.css";
+@import "components/bo_accueil.css";
+@import "components/bo_messages.css";
+@import "components/bo_form.css";
+@import "components/login.css";

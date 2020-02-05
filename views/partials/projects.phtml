@@ -2,64 +2,30 @@
     <div class="container_img_texture">
         <img class="projet_up" src="assets/images/projet-up.png" alt="peinture rose">
     </div>
-    <h2 class="h2 projets_title">Projets réalisés</h2>
+    <h2 class="h2 projets_title">Mes réalisations</h2>
     <div class="project_list">
+    <?php
+        $table='projects';
+        $projets= loadTable($table);
+        foreach($projets as $projet):?>
         <div class="project">
             <div class="face-side">
                 <a class="project_url" href="#projects">
-                    <img class="project_img" src="assets/images/projets/petsitter.png" alt="Site petsitter">
+                    <img class="project_img" src="assets/images/uploads/projets/<?=$projet['image']?>" alt="<?=$projet['titre']?>">
                 </a>
             </div>
             <div class="hover-side">
+            <?php if(strlen($projet['url'])> 0): ?>
+                <a class="project_url" href="<?=$projet['url']?> " target="_blank">
+            <?php else :?> 
                 <a class="project_url" href="#projects">
-                    <p class="h3">1er projet réalisé en 2018 lors de ma licence pro</p>
-                    <p>HTML, CSS, JS, PHP, SQL</p>
+            <?php endif?>    
+                    <p class="h3"><?=$projet['description']?></p>
+                    <p><?=$projet['language']?></p>
                 </a>
             </div>
-
         </div>
-        <div class="project">
-            <div class="face-side">
-                <a class="project_url" href="https://www.happytomeetyou.fr/" target="_blank">
-                    <img class="project_img" src="assets/images/projets/happy-to-meet-you.jpg" alt="Site happy to meet you">
-                </a>
-            </div>
-            <div class="hover-side">
-                <a class="project_url" href="https://www.happytomeetyou.fr/" target="_blank">
-                    <p class="h3">Projet réalisé en 2019 en équipe chez Yeswedev</p>
-                    <p>Wordpress,  HTML, CSS, JS, PHP</p>
-                </a>
-            </div>
-
-        </div>
-        <div class="project">
-            <div class="face-side">
-                <a class="project_url" href="http://www.oliverstown.com/" target="_blank">
-                    <img class="project_img" src="assets/images/projets/olivertown.png" alt="Site OliverTown">
-                </a>
-            </div>
-            <div class="hover-side">
-                <a class="project_url" href="http://www.oliverstown.com/" target="_blank">
-                    <p class="h3">Projet réalisé en 2019 en équipe chez Yeswedev</p>
-                    <p>Wordpress,  HTML, CSS, JS, PHP</p>
-                </a>
-            </div>
-
-        </div>
-        <div class="project">
-            <div class="face-side">
-                <a class="project_url" href="#projects" >
-                    <img class="project_img" src="../assets/images/projets/site-portfolio.png" alt="Site portefolio">
-                </a>
-            </div>
-            <div class="hover-side">
-                <a class="project_url" href="#projects">
-                    <p class="h3">Site réalisé dans le cadre de la validation de mon titre RNCP</p>
-                    <p>HTML, CSS, JS, PHP</p>
-                </a>
-            </div>
-
-        </div>
+        <?php endforeach;?>
     </div>
     <div class="container_img_texture">
         <img class="projet_down"src="assets/images/projet-down.png" alt="peinture rose">

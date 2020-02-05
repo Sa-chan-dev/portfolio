@@ -1,0 +1,42 @@
+<section class="read_message">
+    <h1 class="h1 bo_title1">Gestion des utilisateurs</h1>
+    <!-- message flash -->
+    <div class="alert-success">
+                
+        <?php
+                if (isset($_SESSION['SuccesFlash'])) {
+                    echo $_SESSION['SuccesFlash'];
+                    echo '<div class="close">X</div>';
+                    unset($_SESSION['SuccesFlash']);
+                }
+        ?>
+    </div>
+    <div>
+        <a href="addUser.php"><i class="fas fa-user-plus"></i>Ajouter un utilisateur</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" >Supprimer</th>
+                <th scope="col" >Modifier</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Mail</th>
+                <th scope="col" >Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($utilisateurs as $utilisateur):?>
+                <tr>
+                        <td><a href="delUser.php?id=<?=$utilisateur['id']?>" data-toggle="modal" data-target="#delete"><i class="fas fa-user-minus"></i></a></td>
+                        <td><a href="editUser.php?id=<?=$utilisateur['id']?>" data-toggle="modal" data-target="#edit"><i class="fas fa-user-edit"></i></a></td>
+                        <td><?=$utilisateur['nom']?></td>
+                        <td><?=$utilisateur['prenom']?></td>
+                        <td><?=$utilisateur['email']?></td>
+                        <td><?=$utilisateur['role']?></td>
+                </tr> 
+            <?php endforeach;?>
+        </tbody>
+    </table>
+
+</section>

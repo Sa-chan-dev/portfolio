@@ -1,0 +1,33 @@
+<section class="bo_form">
+    <h1 class="h1 bo_title1">
+        <?php if(is_null($id)):?>Ajouter une qualité<?php 
+                else:?>Modifier une qualité<?php endif;?>
+    </h1>
+
+    <form action="<?php if(is_null($id)):?>addQualite.php<?php 
+                    else:?>editQualite.php<?php 
+                    endif;?>" 
+                    method="POST" enctype="multipart/form-data">
+
+            <?php if(!is_null($id)):?>
+                <input type="hidden" value="<?=$id?>" name="id">
+            <?php endif;?>
+
+            <div class="bo_form_item">
+                <label for="titreForm">Titre</label>
+                <input type="text" class="bo_form_input" id="titreForm"  name="titreForm" value="<?=$titre?>">
+            </div>
+
+            <div class="bo_form_item">
+            <input class="bo_form_item" type="file" id="iconeForm" name="iconeForm" accept=".svg,.png">
+            <p><strong>Note:</strong> Seuls les formats .svg et  .png sont autorisés </p>
+            </div>
+
+                <button type="submit" class="bo_form_button">
+                    <?php if(is_null($id)):?>Ajouter<?php 
+                    else:?>Modifier<?php endif;?>
+                </button>
+        </fieldset>
+    </form>
+
+</section>

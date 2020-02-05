@@ -1,0 +1,11 @@
+.login{
+    
+    background-image: linear-gradient(to bottom,rgb(255, 180, 131) , rgb(224, 0, 138));
+    background-size:100%;
+    scroll-behavior: smooth;
+    max-height: 600px;
+}
+
+.login form{
+    padding: 200px 0 0;
+}

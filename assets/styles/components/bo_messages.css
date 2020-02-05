@@ -1,0 +1,51 @@
+.read_message{
+    background-color: var(--c-secondary);
+    padding: 0 150px 100px;
+    min-height: 900px;
+    height: 100%;
+    margin: -100px;
+    
+}
+
+table{
+    padding: 200px 0;
+    border-collapse: collapse;
+    border: 1px solid var(--ter-color);
+    width: 100%;
+}
+
+tr{
+    border: 1px solid var(--ter-color);
+}
+th{
+    padding: 20px;
+    
+}
+
+td{
+    padding: 30px;
+}
+
+@media (max-width: 1250px){
+
+    th{
+        display: none;
+        
+    }
+
+    td{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .coordonees{
+        display: flex;
+        flex-direction: row;
+    }
+
+
+    td{
+        padding: 15px 5px;
+    }
+
+}

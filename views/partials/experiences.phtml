@@ -3,183 +3,43 @@
         <img class="expe_up" src="assets/images/expe-up.png" alt="peinture saumonée">
     </div>
     <h2 class="h2 experiences_title">Mes expériences</h2>
-        <div class="timeline_item">
-            <div class="timeline">
-                <ul>
+    <div class="timeline_item">
+        <div class="timeline">
+            <ul>
+            <?php
+                $table='experience';
+                $experiences= loadTableDesc($table);
+                foreach($experiences as $experience):?>
                     <li class="item_xp job">
                         <div class="item_xp_bloc" >
                             <div class="date_xp">
-                                <div>2019</div>
+                                <?php if($experience['anneeFin'] == 0):?>
+                                    <div><?=$experience['anneeDeb']?></div>
+                                <?php else: ?>
+                                    <div class="duo"><?=$experience['anneeFin']?> <br><?=$experience['anneeDeb']?></div>
+                                <?php endif?>
                             </div>
                             <div class="content_xp">
                                 <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Développeuse web Junior</h3>
+                                    <h3 class="h3_xp h3"><?=$experience['poste']?></h3>
                                 </div>
                                 <div class="resume_xp">
-                                    <p class="entreprise"><i class="far fa-building"></i> Yeswedev <i class="fas fa-map-marker-alt"></i> Rennes</p>     
-                                    <p>Mise en pratique du HTML, CSS, JavaScript, PHP. Apprentissage de GIT et Wordpress. (4mois)</p>     
+                                    <?php if(strlen($experience['entreprise']) > 19):?>
+                                        <p class="entreprise"><i class="far fa-building"></i> <?=$experience['entreprise']?><br><i class="fas fa-map-marker-alt"></i> <?=$experience['ville']?></p>
+                                    <?php elseif(strlen($experience['entreprise'])== 0): ?>
+                                        <p class="entreprise"><?=$experience['description']?></p>  
+                                    <?php else: ?>
+                                        <p class="entreprise"><i class="far fa-building"></i> <?=$experience['entreprise']?><i class="fas fa-map-marker-alt"></i> <?=$experience['ville']?></p>     
+                                    <?php endif?>
+                                    <?php if(strlen($experience['entreprise'])> 0): ?>
+                                        <p><?=$experience['description']?></p>      
+                                    <?php endif?>   
                                 </div>
                             </div> 
                         </div>
                     </li>
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc" >
-                            <div class="date_xp">
-                                <div>2019</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Formation intensive de Développement web</h3>
-                                </div>
-                                <div class="resume_xp">
-                                    <p class="entreprise"><i class="far fa-building"></i> 3W Academy <i class="fas fa-map-marker-alt"></i> Rennes</p>     
-                                    <p>Apprentissage du HTML, CSS, JavaScript, PHP. (3mois)</p>     
-                                </div>
-                            </div> 
-                        </div>
-                    </li>
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc" >
-                            <div class="date_xp">
-                                <div>2018</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Technicienne en Géomatique</h3>
-                                </div>
-                                <div class="resume_xp">
-                                    <p class="entreprise"><i class="far fa-building"></i> Parera <i class="fas fa-map-marker-alt"></i> Rennes</p>     
-                                    <p>Conception cartographique, ingénierie des télécomunications, gestion des données, suivi de projets.(4mois)</p>     
-                                </div>
-                            </div> 
-                        </div>
-                    </li>
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc" >
-                            <div class="date_xp">
-                                <div>2018</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Géomaticienne</h3>
-                                </div>
-                                <div class="resume_xp">
-                                    <p class="entreprise"><i class="far fa-building"></i> Stage à la Direction Départementale des Territoires et de la Mer <br><i class="fas fa-map-marker-alt"></i> Rennes</p>     
-                                    <p>Service de la Mission de l'Expertise teritoriale et de la Stratégie du Système d'Information <br> Gestion de base de données (SQL), gestion de projets, création d'un webSIG, conception cartographique. (6mois)</p>     
-                                </div>
-                            </div> 
-                        </div>
-                    </li>
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc" >
-                            <div class="date_xp">
-                                <div>2018</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Licence professionnelle Aménagement du territoire et Géomatique</h3>
-                                </div>
-                                <div class="resume_xp">
-                                    <p class="entreprise"><i class="far fa-building"></i> Le Mans Université <i class="fas fa-map-marker-alt"></i> Le Mans</p>     
-                                    <p>Apprentissage du SQL, QGIS, MapInfo, découverte du HTML, CSS , JavaScript et PHP, notion d'Urbanisme</p>   
-                                </div>
-                            </div> 
-                        </div>
-                    </li>
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc">
-                            <div class="date_xp">
-                                <div class="duo">2018 <br>2013</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Auxillaire de vie Sociale</h3>
-                                </div>
-                                <div class="resume_xp">
-                                    <p class="entreprise"><i class="far fa-building"></i> Vitalliance  <i class="fas fa-map-marker-alt"></i> Rennes</p>     
-                                    <p>Aide au maintien de l'autonomie, Ménage, Cuisine, Aide administrative</p>   
-                                </div>
-                            </div> 
-                        </div>
-                    </li>
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc" >
-                            <div class="date_xp">
-                                <div>2017</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">DEUG de Géographie Aménagement-Environnement</h3>
-                                </div>
-                                <div class="resume_xp">
-                                    <p class="entreprise"><i class="far fa-building"></i> Université Rennes2  <i class="fas fa-map-marker-alt"></i> Rennes</p>     
-                                </div>
-                            </div> 
-                        </div>
-                    </li>
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc" >
-                            <div class="date_xp">
-                                <div>2015</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Diplôme d'accès aux études universitaires</h3>
-                                </div>
-                                <div class="resume_xp">
-                                    <p class="entreprise"><i class="far fa-building"></i> Université Rennes2  <i class="fas fa-map-marker-alt"></i> Rennes</p>
-                                    <p>Equivalence du baccalauréat</p>     
-                                </div>
-                            </div> 
-                        </div>
-                    </li>
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc" >
-                            <div class="date_xp">
-                                <div class="duo">2012 <br>2011</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Aide soignante</h3>
-                                </div>
-                                <div class="resume_xp">
-                                <p class="entreprise"><i class="far fa-building"></i> Centre Hospitalier <i class="fas fa-map-marker-alt"></i> Dax</p>       
-                                </div>
-                            </div> 
-                        </div>
-                    </li> 
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc" >
-                            <div class="date_xp">
-                                <div class="duo">2011 <br>2006</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Nombreux travaux saisonniers</h3>
-                                </div>
-                                <div class="resume_xp">
-                                <p class="entreprise">Aide-soignante, femme de chambre, vendeuse...</p>       
-                                </div>
-                            </div> 
-                        </div>
-                    </li>
-                    <li class="item_xp job">
-                        <div class="item_xp_bloc" >
-                            <div class="date_xp">
-                                <div>2008</div>
-                            </div>
-                            <div class="content_xp">
-                                <div class="titre_xp">
-                                    <h3 class="h3_xp h3">Diplôme d'état d'aide soignante</h3>
-                                </div>
-                                <div class="resume_xp">
-                                <p class="entreprise"><i class="far fa-building"></i> IFAS <i class="fas fa-map-marker-alt"></i> Saint-lô</p>       
-                                </div>
-                            </div> 
-                        </div>
-                    </li>    
-                </ul>
-            </div>
+                <?php endforeach;?>
+            </ul>
         </div>
     </div>
     <div class="container_img_texture">

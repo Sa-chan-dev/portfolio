@@ -1,0 +1,46 @@
+<section class="read_message">
+    <h1 class="h1 bo_title1">Gestion des experiences</h1>
+    <!-- message flash -->
+    <div class="alert-success">
+                
+        <?php
+                if (isset($_SESSION['SuccesFlash'])) {
+                    echo $_SESSION['SuccesFlash'];
+                    echo '<div class="close">X</div>';
+                    unset($_SESSION['SuccesFlash']);
+                }
+        ?>
+    </div>
+    <div>
+        <a href="addExpe.php"><i class="fas fa-plus-circle"></i>Ajouter une expérience</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col" >Supprimer</th>
+                <th scope="col" >Modifier</th>
+                <th scope="col">Année de début ou d'obtention</th>
+                <th scope="col">Année de Fin</th>
+                <th scope="col">Poste</th>
+                <th scope="col">Entreprise</th>
+                <th scope="col" >Ville</th>
+                <th scope="col" >Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($experiences as $experience):?>
+                <tr>
+                        <td><a href="delExpe.php?id=<?=$experience['id']?>" data-toggle="modal" data-target="#delete"><i class="fas fa-trash-alt"></i></a></td>
+                        <td><a href="editExpe.php?id=<?=$experience['id']?>" data-toggle="modal" data-target="#edit"><i class="fas fa-edit"></i></a></td>
+                        <td><?=$experience['anneeDeb']?></td>
+                        <td><?=$experience['anneeFin']?></td>
+                        <td><?=$experience['poste']?></td>
+                        <td><?=$experience['entreprise']?></td>
+                        <td><?=$experience['ville']?></td>
+                        <td><?=$experience['description']?></td>
+                </tr> 
+            <?php endforeach;?>
+        </tbody>
+    </table>
+
+</section>

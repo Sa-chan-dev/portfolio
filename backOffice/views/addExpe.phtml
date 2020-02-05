@@ -1,0 +1,53 @@
+<section class="bo_form">
+    <h1 class="h1 bo_title1">
+        <?php if(is_null($id)):?>Ajouter une expérience<?php 
+                else:?>Modifier une expérience<?php endif;?>
+    </h1>
+
+    <form action="<?php if(is_null($id)):?>addExpe.php<?php 
+                    else:?>editExpe.php<?php 
+                    endif;?>" 
+                    method="POST" enctype="multipart/form-data">
+
+            <?php if(!is_null($id)):?>
+                <input type="hidden" value="<?=$id?>" name="id">
+            <?php endif;?>
+
+            <div class="bo_form_item">
+                <label for="anneeDebForm">Année de début ou d'obtention</label>
+                <input type="text" class="bo_form_input" id="anneeDebForm" aria-describedby="anneeDebForm" name="anneeDebForm" placeholder="Année de début ou d'obtention" value="<?=$anneeDeb?>">
+            </div>
+
+            <div class="bo_form_item">
+                <label for="anneeFinForm">Année de fin</label>
+                <input type="text" class="bo_form_input" id="anneeFinForm" aria-describedby="anneeFinForm" name="anneeFinForm" placeholder="Ne rien mettre si 1 année" value="<?=$anneeFin?>">
+            </div>
+
+            <div class="bo_form_item">
+                <label for="posteForm">Poste</label>
+                <input type="text" class="bo_form_input" id="posteForm" aria-describedby="poste" name="posteForm" placeholder="Votre poste" value="<?=$poste?>">
+            </div>
+
+            <div class="bo_form_item">
+                <label for="entrepriseForm">Entreprise</label>
+                <input type="text" class="bo_form_input" id="entrepriseForm" aria-describedby="entreprise" name="entrepriseForm" placeholder="Votre entreprise" value="<?=$entreprise?>">
+            </div>
+
+            <div class="bo_form_item">
+                <label for="prenomForm">Ville</label>
+                <input type="text" class="bo_form_input" id="villeForm" aria-describedby="ville" name="villeForm" placeholder="Ville de l'entreprise" value="<?=$ville?>">
+            </div>
+
+            <div class="bo_form_item">
+                <label for="descriptionForm">Description</label>
+                <textarea type="text" class="bo_form_input" id="descriptionForm" aria-describedby="description" name="descriptionForm"  value="<?=$description?>"></textarea>
+            </div>
+
+                <button type="submit" class="bo_form_button">
+                    <?php if(is_null($id)):?>Ajouter<?php 
+                    else:?>Modifier<?php endif;?>
+                </button>
+        </fieldset>
+    </form>
+
+</section>

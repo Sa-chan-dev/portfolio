@@ -1,0 +1,41 @@
+<section class="bo_form">
+    <h1 class="h1 bo_title1">
+        <?php if(is_null($id)):?>Ajouter une compétence<?php 
+                else:?>Modifier une compétence<?php endif;?>
+    </h1>
+
+    <form action="<?php if(is_null($id)):?>addSkill.php<?php 
+                    else:?>editSkill.php<?php 
+                    endif;?>" 
+                    method="POST" enctype="multipart/form-data">
+
+            <?php if(!is_null($id)):?>
+                <input type="hidden" value="<?=$id?>" name="id">
+            <?php endif;?>
+
+            <div class="bo_form_item">
+                <label for="titreForm">Titre</label>
+                <input type="text" class="bo_form_input" id="titreForm"  name="titreForm" value="<?=$titre?>">
+            </div>
+            <div class="bo_form_item">
+                <label for="levelForm">Niveau</label>
+                <input type="text" class="bo_form_input" id="levelForm"  name="levelForm" value="<?=$niveau?>">
+            </div>
+
+            <div class="bo_form_item">
+                <label for="descriptionForm">Description</label>
+                <textarea  rows="15" cols="80 class="bo_form_input"  name="descriptionForm" ><?=$description?></textarea>
+            </div>
+            <div class="bo_form_item">
+            <input class="bo_form_item" type="file" id="iconeForm" name="iconeForm" accept=".svg,.png">
+            <p><strong>Note:</strong> Seuls les formats .svg et  .png sont autorisés </p>
+            </div>
+
+                <button type="submit" class="bo_form_button">
+                    <?php if(is_null($id)):?>Ajouter<?php 
+                    else:?>Modifier<?php endif;?>
+                </button>
+        </fieldset>
+    </form>
+
+</section>
